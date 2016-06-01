@@ -31,27 +31,6 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="]$reset_color"
 ZSH_THEME_GIT_PROMPT_DIRTY="$fg[red]+"
 ZSH_THEME_GIT_PROMPT_CLEAN="$fg[green]"
 
-
-
-function put_spacing() {
-local vcs=$(get_vcs)
-if [ ${#vcs} != 0 ]; then
-    ((vcs=${#vcs} - 10))
-else
-    vcs=0
-fi
-
-local termwidth
-(( termwidth = ${COLUMNS} - 3 - ${#HOST} - ${#$(get_pwd)} - ${vcs} ))
-
-local spacing=""
-for i in {1..$termwidth}; do
-    spacing="${spacing} "
-done
-echo $spacing
-}
-
-
-
-PROMPT='$fg[cyan]%m: $fg[yellow]$(get_pwd)$(put_spacing)$(get_vcs)
-$reset_color> '
+PROMPT='
+$fg[cyan]%m: $fg[yellow]$(get_pwd): $(get_vcs)
+$reset_color→ '
