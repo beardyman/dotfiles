@@ -18,6 +18,9 @@ setopt correct
 # nodenv ----------------------------------------------------------------------
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 
+# Env vars --------------------------------------------------------------------
+[ -f ~/.zshenv ] && source ~/.zshenv
+
 # Aliases ---------------------------------------------------------------------
 [ -f ~/.aliases.sh ] && source ~/.aliases.sh
 

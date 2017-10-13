@@ -1,5 +1,4 @@
 
-
 export PROJECTS_PATH="/Users/jnornhold/Documents/Projects/work"
 
 export PATH="$PROJECTS_PATH/gitplus/commands:/usr/local/heroku/bin:$HOME/.composer/vendor/bin/:/opt/vertica/bin/:bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
