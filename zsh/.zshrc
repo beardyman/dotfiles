@@ -83,19 +83,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source /opt/boxen/env.sh
-source ~/.cassandraHosts.sh
-export CLOSURE_PATH=`brew --prefix closure-compiler`/libexec
-export N_PREFIX='/opt/boxen/'
-alias ll="ls -al"
-alias jShort="hg slog -u jordan -l 10"
-alias jNice="hg nlog -u jordan -l 10"
-alias restart-nginx="sudo launchctl stop dev.openresty"
-alias open-ucc="open test/reports/unit/lcov-report/index.html"
-alias open-fcc="open test/reports/func/lcov-report/index.html"
-alias scurl="curl -w \"@/opt/curl-stats\" ${@}"
 
-export SAUCE_USER=app-dev
-export SAUCE_KEY=5a7d08a4-9566-4287-a400-6c3706d4b317
-
-[ -s "/Users/jnornhold/.dnx/dnvm/dnvm.sh" ] && . "/Users/jnornhold/.dnx/dnvm/dnvm.sh" # Load dnvm
+# source ~/.zshenv
