@@ -83,8 +83,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source /opt/boxen/env.sh
-source ~/.cassandraHosts.sh
 export CLOSURE_PATH=`brew --prefix closure-compiler`/libexec
 export N_PREFIX='/opt/boxen/'
 alias ll="ls -al"
