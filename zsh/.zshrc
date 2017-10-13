@@ -13,7 +13,7 @@ source $ZSH/oh-my-zsh.sh
 # zsh options -----------------------------------------------------------------
 setopt autolist
 setopt correct
-# unsetopt cdablevars # this REALLY slowed down oh-my-zsh for me
+unsetopt cdablevars # this REALLY slowed down oh-my-zsh for me
 
 # nodenv ----------------------------------------------------------------------
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
