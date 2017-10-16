@@ -1,5 +1,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/jnornhold/.oh-my-zsh
+ 
+# Env vars --------------------------------------------------------------------
+[ -f ~/.zshenv ] && source ~/.zshenv
 
 # Theme -----------------------------------------------------------------------
 ZSH_THEME="avit"
@@ -18,14 +21,11 @@ unsetopt cdablevars # this REALLY slowed down oh-my-zsh for me
 # nodenv ----------------------------------------------------------------------
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 
-# Env vars --------------------------------------------------------------------
-[ -f ~/.zshenv ] && source ~/.zshenv
-
 # Aliases ---------------------------------------------------------------------
-[ -f ~/.aliases.sh ] && source ~/.aliases.sh
+[ -f ~/.aliases ] && source ~/.aliases
 
 # Utils -----------------------------------------------------------------------
-[ -f ~/.utilFunctions.sh ] && source ~/.utilFunctions.sh
+[ -f ~/.utilFunctions ] && source ~/.utilFunctions
 
 # Private things --------------------------------------------------------------
 [ -f ~/.private.local ] && source ~/.private.local

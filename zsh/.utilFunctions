@@ -13,26 +13,35 @@ run-playbook() {
 }
 
 _get_tenant_folder() {
-  tenant=$1
-  if [ $tenant == p ]; then
-    tenant=consolidated-prd
-  elif [ $tenant == s ]; then
-    tenant=consolidated-stg
-  elif [ $tenant == t ]; then
-    tenant=consolidated-tst
-  elif [ $tenant == eu ]; then
-    tenant=consolidated-eu
-  else
-    tenant=spe-${tenant}
-  fi
-  echo $tenant
+  case $1 in
+    p) tenant=consolidated-prd;;
+    s) tenant=consolidated-stg;;
+    t) tenant=consolidated-tst;;
+    eu) tenant=consolidated-eu;;
+    *) tenant=spe-$1;;
+  esac;
+
+  echo $ANSIBLE_ENV_PATH/$tenant
 }
 
 cass() {
-  cqlsh `parse-inv -f $ANSIBLE_ENV_PATH/$(_get_tenant_folder $1)/inventory/cassandra cassandra | head -n 1`
+  cqlsh $(parse-inv -f $(_get_tenant_folder $1)/inventory/cassandra cassandra | head -n 1)
 }
 
 
 vert() {
-  vsql -h `parse-inv -f $ANSIBLE_ENV_PATH/$(_get_tenant_folder $1)/inventory/cluster vertica | head -n 1` -U dbadmin
+  vsql -h `parse-inv -f $(_get_tenant_folder $1)/inventory/cluster vertica | head -n 1` -U dbadmin
+}
+
+
+api-key() {
+  case $1 in 
+    p) ex_path=tenants/spc/site.yml;;
+    s) ex_path=tenants/spcstg/site.yml;;
+    t) ex_path=tenants/spcuat/site.yml;;
+    eu) ex_path=tenants/spe-eudemo/site.yml;;
+    *) ex_path=site/site.yml;;
+  esac;
+
+  grep -e 'app_smoke_api_key' `_get_tenant_folder $1`/$ex_path | cut -d ":" -f2 | sed -e 's/^[[:space:]]*//'
 }
