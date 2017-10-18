@@ -32,3 +32,4 @@ if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 
 # oh hai hamurai --------------------------------------------------------------
 [ -f /opt/hamurai/env.sh ] && source /opt/hamurai/env.sh
+export PATH="/usr/local/opt/cassandra@2.1/bin:$PATH"
