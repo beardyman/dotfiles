@@ -28,14 +28,12 @@ cass() {
   cqlsh $(parse-inv -f $(_get_tenant_folder $1)/inventory/cassandra cassandra | head -n 1)
 }
 
-
 vert() {
   vsql -h `parse-inv -f $(_get_tenant_folder $1)/inventory/cluster vertica | head -n 1` -U dbadmin
 }
 
-
-api-key() {
-  case $1 in 
+t-val(){
+  case $1 in
     p) ex_path=tenants/spc/site.yml;;
     s) ex_path=tenants/spcstg/site.yml;;
     t) ex_path=tenants/spcuat/site.yml;;
@@ -43,5 +41,32 @@ api-key() {
     *) ex_path=site/site.yml;;
   esac;
 
-  grep -e 'app_smoke_api_key' `_get_tenant_folder $1`/$ex_path | cut -d ":" -f2 | sed -e 's/^[[:space:]]*//'
+  echo $(cat $(_get_tenant_folder $1)/$ex_path | js-yaml | jq -r ".[\"$2\"]")
+}
+
+api-key() {
+  echo `g-t-v $1 app_smoke_api_key`
+}
+
+api-host() {
+  echo `g-t-v $1 api_host`
+}
+
+t-curl() {
+  tenant=$1
+  endpoint=$2
+  shift 2
+  
+  curl -H "Content-Type: application/json" -H "Authorization: $(api-key $tenant)" https://$(api-host $tenant)/api/v1/${endpoint} $@
+}
+
+hp () {
+  cd $ANSIBLE_ENV_PATH/..
+  hg pull -u
+  hg pull -R site
+}
+
+hu () {
+  hg up $1
+  hg up $1 -R site
 }
