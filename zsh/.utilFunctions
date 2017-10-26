@@ -32,6 +32,10 @@ vert() {
   vsql -h `parse-inv -f $(_get_tenant_folder $1)/inventory/cluster vertica | head -n 1` -U dbadmin
 }
 
+mvert() {
+  vsql -h `parse-inv -f $(_get_tenant_folder $1)/inventory/cluster vertica_message_events | head -n 1` -U dbadmin
+}
+
 t-val(){
   case $1 in
     p) ex_path=tenants/spc/site.yml;;
@@ -63,7 +67,7 @@ t-curl() {
 hp () {
   cd $ANSIBLE_ENV_PATH/..
   hg pull -u
-  hg pull -R site
+  hg pull -u -R site
 }
 
 hu () {
