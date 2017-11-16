@@ -15,7 +15,7 @@ source $ZSH/oh-my-zsh.sh
 
 # zsh options -----------------------------------------------------------------
 setopt autolist
-setopt correct
+#setopt correct
 unsetopt cdablevars # this REALLY slowed down oh-my-zsh for me
 
 # nodenv ----------------------------------------------------------------------

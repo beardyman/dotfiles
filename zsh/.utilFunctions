@@ -36,7 +36,7 @@ mvert() {
   vsql -h `parse-inv -f $(_get_tenant_folder $1)/inventory/cluster vertica_message_events | head -n 1` -U $VERTICA_USER
 }
 
-t-val(){
+g-t-v(){
   case $1 in
     p) ex_path=tenants/spc/site.yml;;
     s) ex_path=tenants/spcstg/site.yml;;
