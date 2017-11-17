@@ -9,7 +9,7 @@ run-playbook() {
   fi
   
   shift 2
-  ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook ${book}.yml --inventory-file=site/${tenant}/inventory -e "site=$PWD/site/${tenant}/site/site" --user=msysdeploy --private-key=~/.ssh/ecbuild $@
+  ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook ${book}.yml -i=site/${tenant}/inventory -e "site=$PWD/site/${tenant}/site/site" --user=msysdeploy --private-key=~/.ssh/ecbuild $@
 }
 
 _get_tenant_folder() {
