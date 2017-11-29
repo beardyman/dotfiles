@@ -7,5 +7,5 @@ alias open-fcc="open test/reports/func/lcov-report/index.html"
 alias scurl="curl -w \"@/opt/curl-stats\" ${@}"
 alias cw="cd ~/projects/work"
 
-alias ai='ag --path-to-ignore ~/.ignore ${@}'
+alias ai='ag --path-to-ignore='~/.ignore' ${@}'
 
