@@ -74,3 +74,41 @@ hu () {
   hg up $1
   hg up $1 -R site
 }
+
+configs () {
+
+  env=$1;
+
+  echo "Getting configs from $env";
+
+  apiservices=('ab-testing-api' 'integrations-api' 'ip-pools-api' 'message-events-api' 'messaging-tools-api' 'metrics-api' 'omni-api' 'sparkpost-scripts' 'suppression-api' 'unengaged-recipients-api' 'users-api' 'webhooks-api');
+
+
+  for service in "${apiservices[@]}"; do
+     echo "Getting $service production.json file";
+     mkdir -p /var/tmp/prd-configs/$service/config
+     scp $(parse-inv -f $(_get_tenant_folder $env)/inventory/cluster application | head -n 1):/opt/msys/app/$service/config/production.json /var/tmp/prd-configs/$service/config/production.json
+     if [ "$service" = 'users-api' ]; then
+       scp $(parse-inv -f $(_get_tenant_folder $env)/inventory/cluster application | head -n 1):/opt/msys/app/$service/config/production-auth.json /var/tmp/prd-configs/$service/config/production-auth.json
+     fi
+  done;
+
+  whservices=('suppression-loader' 'webhooks-delivery');
+
+  for service in "${whservices[@]}"; do
+     echo "Getting $service production.json file";
+     mkdir -p /var/tmp/prd-configs/$service/config
+     scp $(parse-inv -f $(_get_tenant_folder $env)/inventory/cluster etl_webhooks | head -n 1):/opt/msys/app/$service/config/production.json /var/tmp/prd-configs/$service/config/production.json
+  done;
+
+  etlservices=('omni');
+  etlservers=($(parse-inv -f $(_get_tenant_folder $env)/inventory/cluster etl));
+
+  for server in "${etlservers[@]}"; do
+    for service in "${etlservices[@]}"; do
+       echo "Getting $service production.json file";
+       mkdir -p /var/tmp/prd-configs/$service
+       scp $server:/opt/msys/app/omni-etl/config/production.json /var/tmp/prd-configs/$service/$( echo $server | tr "." "\n" | head -n 1).omni_etl.production.json
+    done;
+  done;
+}
