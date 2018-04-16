@@ -1,4 +1,4 @@
-
+#!/bin/bash
 run-playbook() {
   book=$1
   tenant=$2
@@ -56,6 +56,10 @@ api-host() {
   echo `g-t-v $1 api_host`
 }
 
+i-api-host() {
+  echo `g-t-v $1 internal_elb_host`
+}
+
 t-curl() {
   tenant=$1
   endpoint=$2
@@ -74,9 +78,10 @@ hu () {
   hg up $1
   hg up $1 -R site
 }
-
+bam () {
+  open $(jq -r "._meta.${1}" "$(git rev-parse --show-toplevel)/package.json")
+}
 configs () {
-
   env=$1;
 
   echo "Getting configs from $env";

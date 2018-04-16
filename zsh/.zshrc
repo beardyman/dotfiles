@@ -32,3 +32,10 @@ if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 
 # oh hai hamurai --------------------------------------------------------------
 [ -f /opt/hamurai/env.sh ] && source /opt/hamurai/env.sh
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/jnornhold/.nodenv/versions/8.9.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/jnornhold/.nodenv/versions/8.9.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/jnornhold/.nodenv/versions/8.9.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/jnornhold/.nodenv/versions/8.9.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh

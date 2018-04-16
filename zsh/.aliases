@@ -8,4 +8,4 @@ alias scurl="curl -w \"@/opt/curl-stats\" ${@}"
 alias cw="cd ~/projects/work"
 
 alias ai='ag --path-to-ignore='~/.agignore' ${@}'
-
+alias qt="NODE_ENV=test grunt shell:testGrowl ${@}"
