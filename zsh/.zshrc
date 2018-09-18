@@ -8,15 +8,15 @@ export ZSH=/Users/jnornhold/.oh-my-zsh
 ZSH_THEME="avit"
 
 # oh-my-zsh plugins -----------------------------------------------------------
-plugins=(brew git mercurial npm node heroku osx)
+plugins=(brew git)
 
 # Setup oh-my-zsh -------------------------------------------------------------
 source $ZSH/oh-my-zsh.sh
 
 # zsh options -----------------------------------------------------------------
-setopt autolist
+#setopt autolist
 #setopt correct
-unsetopt cdablevars # this REALLY slowed down oh-my-zsh for me
+#unsetopt cdablevars # this REALLY slowed down oh-my-zsh for me
 
 # nodenv ----------------------------------------------------------------------
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
