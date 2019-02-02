@@ -39,3 +39,4 @@ if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/jnornhold/.nodenv/versions/8.9.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/jnornhold/.nodenv/versions/8.9.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+plugins+=(zsh-better-npm-completion)

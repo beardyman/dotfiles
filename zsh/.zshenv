@@ -7,4 +7,9 @@ export CLOSURE_PATH=`brew --prefix closure-compiler`/libexec
 export ANSIBLE_ENV_PATH="$PROJECTS_PATH/Ansible-Deployment/site"
 export GIT_MERGE_AUTOEDIT=no
 export GOPATH=/opt/go
-export PATH="/usr/local/opt/python/libexec/bin:/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+
+# for Python
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
