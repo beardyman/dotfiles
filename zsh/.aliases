@@ -1,7 +1,5 @@
 alias ll="ls -al"
-alias jShort="hg slog -u jordan -l 10"
-alias jNice="hg nlog -u jordan -l 10"
-alias restart-nginx="sudo launchctl stop dev.openresty"
+alias restart-nginx="brew services restart openresty"
 alias open-ucc="open test/reports/unit/lcov-report/index.html"
 alias open-fcc="open test/reports/func/lcov-report/index.html"
 alias scurl="curl -w \"@/opt/curl-stats\" ${@}"
