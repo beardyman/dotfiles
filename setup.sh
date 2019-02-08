@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+#### setup local var file
+touch $HOME/.private.local
+
 #### setup symlinks for config files
 ln -s $PWD/zsh/.aliases $HOME/.aliases
 ln -s $PWD/zsh/.utilFunctions $HOME/.utilFunctions
