@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 #### setup symlinks for config files
-ln -s $HOME/.aliases $PWD/zsh/.aliases
-ln -s $HOME/.utilFunctions $PWD/zsh/.utilFunctions
-ln -s $HOME/.zshrc $PWD/zsh/.zshenv
-ln -s $HOME/.aliases $PWD/zsh/.aliases
+ln -s $PWD/zsh/.aliases $HOME/.aliases
+ln -s $PWD/zsh/.utilFunctions $HOME/.utilFunctions
+ln -s $PWD/zsh/.zshenv $HOME/.zshrc
+ln -s $PWD/zsh/.aliases $HOME/.aliases
 
 
 #### setup symlinks for auto update and then load it
