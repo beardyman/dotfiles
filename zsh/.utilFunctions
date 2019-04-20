@@ -18,6 +18,7 @@ _get_tenant_folder() {
     p) tenant=consolidated-prd;;
     s) tenant=consolidated-stg;;
     t) tenant=consolidated-tst;;
+    jt) tenant=jordan-tst;;
     eu) tenant=consolidated-eu;;
     *) tenant=spe-$1;;
   esac;
