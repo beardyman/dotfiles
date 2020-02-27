@@ -9,9 +9,14 @@
 [[ ! -e $HOME/.zshenv ]] && ln -s $PWD/zsh/.zshenv $HOME/.zshenv
 [[ ! -e $HOME/.zshrc ]] && ln -s $PWD/zsh/.zshrc $HOME/.zshrc
 
-######### setup vim config symlinks
+#### setup profile gitignore
+[[ ! -e $HOME/.gitingnore ]] && ln -s $PWD/.gitingnore $HOME/.gitingnore
+
+#### setup vim config symlinks
 [[ ! -e $HOME/.vimrc ]] && ln -s $PWD/.vimrc $HOME/.vimrc
 [[ ! -e $HOME/.plug.vim ]] && ln -s $PWD/.plug.vim $HOME/.plug.vim
 
 #### setup symlinks for auto update and then load it
-[[ -d $HOME/Library/LaunchAgents ]] && ln -s $PWD/$USER.UpdateDotFiles.plist $HOME/Library/LaunchAgents/$USER.UpdateDotFiles.plist && launchctl load -w $HOME/Library/LaunchAgents/$USER.UpdateDotFiles.plist
+[[ -d $HOME/Library/LaunchAgents ]] && \
+ln -s $PWD/$USER.UpdateDotFiles.plist $HOME/Library/LaunchAgents/$USER.UpdateDotFiles.plist && \
+launchctl load -w $HOME/Library/LaunchAgents/$USER.UpdateDotFiles.plist
