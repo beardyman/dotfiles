@@ -10,7 +10,7 @@
 [[ ! -e $HOME/.zshrc ]] && ln -s $PWD/zsh/.zshrc $HOME/.zshrc
 
 #### setup profile gitignore
-[[ ! -e $HOME/.gitingnore ]] && ln -s $PWD/.gitingnore $HOME/.gitingnore
+[[ ! -e $HOME/.gitingnore ]] && ln -s $PWD/.gitignore $HOME/.gitignore
 
 #### setup vim config symlinks
 [[ ! -e $HOME/.vimrc ]] && ln -s $PWD/.vimrc $HOME/.vimrc
