@@ -16,6 +16,11 @@
 [[ ! -e $HOME/.vimrc ]] && ln -s $PWD/.vimrc $HOME/.vimrc
 [[ ! -e $HOME/.plug.vim ]] && ln -s $PWD/.plug.vim $HOME/.plug.vim
 
+#### setup iterm profile config
+[[ ! -e $HOME/Library/Application\ Support/iTerm2/DynamicProfiles/iterm-profile ]] && \
+ ln -s $PWD/iterm-profile \
+  $HOME/Library/Application\ Support/iTerm2/DynamicProfiles/iterm-profile
+
 #### setup symlinks for auto update and then load it
 [[ -d $HOME/Library/LaunchAgents ]] && \
 ln -s $PWD/$USER.UpdateDotFiles.plist $HOME/Library/LaunchAgents/$USER.UpdateDotFiles.plist && \
