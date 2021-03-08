@@ -1,5 +1,6 @@
 
-
+# Projects
+export PROJECTS_DIR="$HOME/projects"
 
 # for Python
 export LDFLAGS="-L/usr/local/opt/openssl/lib"

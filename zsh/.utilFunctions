@@ -31,9 +31,10 @@ cass() {
 }
 
 vert() {
-  tenant=$1
+  VERT_ENV=$1
+
   shift 1
-  vsql -h `parse-inv -f $(_get_tenant_folder $tenant)/inventory/cluster vertica | head -n 1` -U $VERTICA_USER $(if [ "$VERTICA_PASSWORD" != "" ] ; then; echo "-w $VERTICA_PASSWORD"; fi) $@
+  vsql -h `jq -r ".vertica.hosts[0]" "$PROJECTS_DIR/metrics-api/config/$VERT_ENV.json"` -U $VERTICA_USER $(if [ "$VERTICA_PASSWORD" != "" ] ; then; echo "-w $VERTICA_PASSWORD"; fi) $@
 }
 
 mvert() {
