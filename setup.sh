@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+./install-homebrew-packages.sh
+
+./npm-modules.sh
+
+
 #### setup local var file
 [[ ! -e $HOME/.private.local ]] && touch $HOME/.private.local
 

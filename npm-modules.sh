@@ -1,4 +1,4 @@
-
+#!/usr/bin/env bash
 
 npm i -g @bchatard/alfred-jetbrains \
   alfred-clap-join \

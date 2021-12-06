@@ -1,5 +1,14 @@
 # Dotfiles
 ---
+```shell
+mkdir ~/projects
+cd projects
+git clone https://github.com/beardyman/dotfiles.git
+cd dotfiles
+./setup.sh
+```
+
+
 
 ### Setup AutoUpdate
 # Instructions
