@@ -12,7 +12,10 @@ if [[ ! -e /bin/zsh ]]; then
 fi
 
 # install the homebrew version of git
-[[ -n $(git --version | grep Apple) ]] || brew install git
+if [[ -n $(git --version | grep Apple) ]]; then
+  brew install git
+  git config --global credential.helper osxkeychain
+fi
 
 # python install
 if [[ -z $(which python3) ]]; then
@@ -30,3 +33,4 @@ fi
 [[ -z $(which mas) ]] && brew install mas
 
 [[ -z $(which nodenv) ]] && brew install nodenv
+[[ -z $(which wget) ]] && brew install wget
