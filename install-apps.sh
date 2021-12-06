@@ -27,3 +27,6 @@ mas lucky Numbers
 
 # Rocket emoji picker
 brew install --cask rocket
+
+# jetbrains
+brew install --cask jetbrains-toolbox
