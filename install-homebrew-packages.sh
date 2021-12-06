@@ -5,7 +5,7 @@
 # python install
 if [[ -z $(which python3) ]]; then
   brew install python
-  
+
   # sets up symlinks so that the brew installed python is the default
   ln -s /usr/local/bin/python3 /usr/local/bin/python
   ln -s /usr/local/bin/pip3 /usr/local/bin/pip
