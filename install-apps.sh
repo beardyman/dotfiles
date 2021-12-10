@@ -20,6 +20,9 @@ mas lucky Bear
 # Slack
 mas lucky Slack
 
+# Discord
+brew install --cask discord
+
 # Apple Apps
 mas lucky Pages
 mas lucky Keynote
