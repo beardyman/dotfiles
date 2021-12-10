@@ -33,3 +33,6 @@ brew install --cask rocket
 
 # jetbrains
 brew install --cask jetbrains-toolbox
+
+# adobe
+brew install --cask adobe-creative-cloud
