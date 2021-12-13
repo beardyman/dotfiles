@@ -3,7 +3,7 @@ alias restart-nginx="brew services restart openresty"
 alias open-ucc="open test/reports/unit/lcov-report/index.html"
 alias open-fcc="open test/reports/func/lcov-report/index.html"
 alias scurl="curl -w \"@/opt/curl-stats\" ${@}"
-alias cw="cd ~/$PROJECTS_DIR"
+alias cw="cd $PROJECTS_DIR"
 
 alias nr="npm run ${@}"
 alias ai='ag --path-to-ignore='~/.agignore' ${@}'
@@ -13,5 +13,7 @@ alias rf="nr test:func"
 alias save-divvy-shortcuts="open divvy://export; echo 'open $(pbpaste)' > $PROJECTS_DIR/dotfiles/settings/divvy.sh"
 
 alias reinstall-cli-tools="sudo rm -rf `xcode-select -p` && xcode-select --install"
+
+alias reinstall-global-npm="$PROJECTS_DIR/dotfiles/npm-modules.sh"
 alias update-node="nvm install node --reinstall-packages-from=node"
 alias nodenv-update-available="brew upgrade node-build"

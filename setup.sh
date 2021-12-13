@@ -14,8 +14,9 @@
 [[ ! -e $HOME/.zshenv ]] && ln -s $PWD/zsh/.zshenv $HOME/.zshenv
 [[ ! -e $HOME/.zshrc ]] && ln -s $PWD/zsh/.zshrc $HOME/.zshrc
 
-#### setup global gitignore
+#### setup global gitignore && git settings
 [[ ! -e $HOME/.config/git/ignore ]] && mkdir -p ~/.config/git && ln -s $PWD/.gitignore $HOME/.config/git/ignore
+git config --global init.defaultBranch main
 
 #### setup vim config symlinks
 [[ ! -e $HOME/.vimrc ]] && ln -s $PWD/.vimrc $HOME/.vimrc
