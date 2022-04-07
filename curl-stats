@@ -1,0 +1,10 @@
+\n
+\nstatus: %{http_code}
+\n
+\ntime_connect: %{time_connect}
+\ntime_namelookup: %{time_namelookup}
+\ntime_pretransfer: %{time_pretransfer}
+\ntime_redirect: %{time_redirect}
+\ntime_starttransfer: %{time_starttransfer}
+\n
+\ntotal: %{time_total}
