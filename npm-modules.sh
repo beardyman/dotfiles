@@ -5,4 +5,5 @@ npm i -g @bchatard/alfred-jetbrains \
   @beardyman/git-better \
   npmrc \
   np \
-  npm-check
+  npm-check \
+  aws-cdk
